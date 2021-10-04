@@ -66,7 +66,7 @@ export default function Search() {
                     <option value="Poetry">Poetry</option>
                 </select>
             </div>
-            <h2>{books.books.length > 0 ? books.totalItems : '0'}</h2>
+            <h2>Found {books.books.length > 0 ? books.totalItems : '0'} results</h2>
         </div>
     );
 }
