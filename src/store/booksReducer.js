@@ -3,7 +3,7 @@ const initialState = {
     search: '',
     result: [],
     books: [],
-    apiKey: 'AIzaSyCa2H8jObyJ_7IzjULL4d0aQV8muTgEIzc',
+    apiKey: process.env.REACT_APP_UNSPLASH_KEY,
     categories: 'All',
     sorting: 'relevance',
     loading: false,

@@ -1,5 +1,7 @@
 import { useSelector } from 'react-redux';
 
+import { Link } from 'react-router-dom';
+
 export default function Books() {
 
     const books = useSelector(state => state.books);
@@ -7,7 +9,7 @@ export default function Books() {
     return (
         <div className="books_wrapp">
             {books.books.map((book, index) => (
-                <a className="link-book" href="/" key={index}>
+                <Link className="link-book" to={`${book.volumeInfo.title}`} key={index}>
                     <img 
                         src={book.volumeInfo.imageLinks !== undefined ?
                         book.volumeInfo.imageLinks.thumbnail : './img/noPicture.png'} 
@@ -21,7 +23,7 @@ export default function Books() {
                         <p className="book_categories">{book.volumeInfo.categories !== undefined ? book.volumeInfo.categories : ''}</p>
                         <p className="book_authors">{book.volumeInfo.authors !== undefined ? book.volumeInfo.authors[0] : ''}</p>
                     </div>
-                </a>
+                </Link>
             ))}
         </div>
     );

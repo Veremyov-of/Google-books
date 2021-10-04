@@ -229,3 +229,66 @@ input[type="text"] {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+/** itemBook **/
+
+.section-itemBook {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemBook-img {
+  width: 300px;
+  height: 400px;
+}
+
+.itemBook-wrapp {
+  color: #212121;
+  background-color: #99a3ce75;
+  width: 600px;
+  padding: 20px 40px;
+  min-height: 400px;
+}
+
+.itemBook-categories {
+  font-size: 18px;
+}
+
+.itemBook-title {
+  margin: 10px 0px;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.itemBook-authors {
+  margin: 10px 0px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.itemBook-textSnippet {
+  font-size: 18px;
+}
+
+
+@media (max-width: 420px) {
+  .search-input {
+    width: 200px;
+  }
+  .search-btn {
+    width: 80px;
+  }
+  .search-filter {
+    width: 280px;
+  }
+
+  .search-filter h3 {
+    font-size: 14px;
+  }
+  .search-select {
+    width: 60px;
+  }
+}

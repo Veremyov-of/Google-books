@@ -1,6 +1,8 @@
 
 import { useSelector } from 'react-redux';
 
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 //components
 import Search from './components/Search';
 import Books from './components/Books';
@@ -16,15 +18,28 @@ function App() {
   const books = useSelector(state => state.books);
 
   return(
-    <div className="App">
-      {/* <Search />
-      <Books />
+    <Router>
+      <div className="App">
+        
+        <Switch>
+          <Route exact path="/">
+              <Search />
+              <Books />
+              {books.loadMore ? <Loadmore /> : ''}
+              <Loading />
+          </Route>
+          {books.books.map((book, index) =>
+            <Route key={index} path={`/${book.volumeInfo.title}`}>
+              <ItemBook book={book}/>
+            </Route>
+          )}
+        </Switch>
+    
 
-      {books.loadMore ? <Loadmore /> : ''}
-      <Loading /> */}
-
-      <ItemBook/>
-    </div>
+      
+        
+      </div>
+    </Router>
   );
 }
 
