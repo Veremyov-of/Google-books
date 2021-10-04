@@ -281,12 +281,11 @@ input[type="text"] {
   .search-btn {
     width: 80px;
   }
-  .search-filter {
-    width: 280px;
-  }
-
   .search-filter h3 {
     font-size: 14px;
+  }
+  .search-filter {
+    width: 280px;
   }
   .search-select {
     width: 60px;
