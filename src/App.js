@@ -18,7 +18,7 @@ function App() {
   const books = useSelector(state => state.books);
 
   return(
-    <Router>
+    <Router basename="/Google-books">
       <div className="App">
         
         <Switch>
