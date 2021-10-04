@@ -1,1 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans Display', sans-serif;
+}
+
+
+
+/** Search **/
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #485bb1;
+  padding: 40px 10px;
+}
+
+.search-title {
+  text-align: center;
+  margin-bottom: 10px;
+  word-spacing: 0.15em;
+  color: #fff;
+  font-weight: 500;
+  font-size: 35px;
+}
+
+.search-form {
+  justify-content: center;
+  display: flex;
+}
+
+.search-input {
+  outline: none;
+  width: 300px;
+  height: 35px;
+  border: none;
+  padding: 0;
+}
+
+input[type="text"] {
+  padding: 10px;
+}
+
+.search-input:placeholder-shown {
+  padding-left: 10px;
+}
+
+.search-btn {
+  position: relative;
+  color: #fff;
+  background: #44aaee;
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  width: 100px;
+  height: 35px;
+  border: none;
+  transition: background .2s;
+}
+
+.search-btn:hover {
+  background: #5db7f3;
+  transition: all .3s;
+}
+
+
+.search-filter {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.search-filter h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 28px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.search-select {
+  width: 120px;
+  height: 28px;
+  outline: none;
+}
+
+
+/** Link books **/
+
+.books_wrapp {
+  justify-content: space-evenly;
+  margin: 20px auto;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.link-book {
+  display: block;
+  text-decoration: none;
+  padding: 50px 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px 10px;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  background-color: #99a3ce75;
+  transform: scale(1);
+  transition: transform .3s;
+}
+
+.link-book:hover {
+  transform: scale(1.04);
+  transition: transform .3s;
+}
+
+.link-book img {
+  width: auto;
+  height: 170px;
+}
+
+.book_info {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.book_title {
+  color: #212121;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.book_categories {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.book_authors {
+  color: #313131;
+  font-size: 18px;
+  font-weight: 500;
+}
 
