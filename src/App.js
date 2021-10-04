@@ -1,19 +1,29 @@
-// import { useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
+
+import { useSelector } from 'react-redux';
 
 //components
 import Search from './components/Search';
 import Books from './components/Books';
+import Loadmore from './components/Loadmore';
+import Loading from './components/Loading';
+import ItemBook from './components/ItemBook';
 
 
 
 
 function App() {
+
+  const books = useSelector(state => state.books);
+
   return(
-    <div>
-      <Search />
+    <div className="App">
+      {/* <Search />
       <Books />
-      
+
+      {books.loadMore ? <Loadmore /> : ''}
+      <Loading /> */}
+
+      <ItemBook/>
     </div>
   );
 }
