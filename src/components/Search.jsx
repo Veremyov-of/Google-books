@@ -41,7 +41,7 @@ export default function Search() {
         <div className='search'>
             <h1 className="search-title">Search for books</h1>          
             <form className='search-form' onSubmit={handleSubmit}>
-                <input className='search-input' onChange={handleChange} type="text" placeholder="Search for Books"/>
+                <input className='search-input' onChange={handleChange} type="text" value={books.search} placeholder="Search for Books"/>
                 <button className='search-btn' type="submit">Search</button>
             </form>
 

@@ -258,12 +258,6 @@ input[type="text"] {
   font-weight: 500;
 }
 
-.itemBook-link {
-
-}
-
-
-
 /** scroll **/
 ::-webkit-scrollbar {
   width: 10px;

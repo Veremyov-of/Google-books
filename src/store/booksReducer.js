@@ -21,14 +21,18 @@ export const booksReducer = (state = initialState, action) => {
             };
 
         case 'SEARCH':
-            return {
-                ...state,
-                result: action.payload.items,
-                totalItems: action.payload.totalItems,
-                number: 0,
-                books: [],
-                step: 0
-            };
+            if(state.search) {
+                return {
+                    ...state,
+                    result: action.payload.items,
+                    totalItems: action.payload.totalItems,
+                    number: 0,
+                    books: [],
+                    step: 0
+                };
+            }
+            return {...state, result: []}
+            
 
         case 'SORTING':
             return {
@@ -50,6 +54,10 @@ export const booksReducer = (state = initialState, action) => {
         
 
         case 'RENDER_BOOKS':
+            if(!state.search) {
+                return {...state, books: [], loading: false}
+            }
+
             if(state.categories === 'All') {
                 return {...state, books: [...state.books, ...state.result], loading: false}
             } else {
