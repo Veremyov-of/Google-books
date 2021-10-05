@@ -29,7 +29,7 @@ function App() {
               <Loading />
           </Route>
           {books.books.map((book, index) =>
-            <Route key={index} path={`/${book.volumeInfo.title}`}>
+            <Route key={index} path={`/${book.volumeInfo?.title}`}>
               <ItemBook book={book}/>
             </Route>
           )}

@@ -12,10 +12,9 @@ export default function Search() {
         loadingBooks();
         event.preventDefault();
         let result = [];
-        await fetch(`https://www.googleapis.com/books/v1/volumes?q=${books.search}&key=${books.apiKey}&maxResults=40&orderBy=${books.sorting}`)
+        await fetch(`https://www.googleapis.com/books/v1/volumes?q=${books.search}&key=${books.apiKey}&maxResults=${books.maxResults}&orderBy=${books.sorting}`)
             .then(response => response.json())
             .then(json => result = json)
-        console.log(result)
         dispatch({type: 'SEARCH', payload: result});
         renderBooks();
     }
@@ -32,7 +31,6 @@ export default function Search() {
 
     const renderBooks = () => {
         dispatch({type: 'RENDER_BOOKS'});
-        loadingBooks();
     }
 
     const loadingBooks = () => {
