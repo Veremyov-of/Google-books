@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+
+import { HashLink as Link } from 'react-router-hash-link';
 
 export default function ItemBook(props) {
     const infoBook = props.book.volumeInfo;
@@ -7,7 +8,7 @@ export default function ItemBook(props) {
         <div className="section-itemBook">
         
            <div className="itemBook">
-               <Link className="itemBook-link" to="/">back</Link>
+               <Link smooth className="itemBook-link" to={`/#${infoBook?.title}`}>back</Link>
                 <img className="itemBook-img" src={infoBook.imageLinks !== undefined ?
                         infoBook.imageLinks.thumbnail : './img/noPicture.png'}
                         alt="img"/>

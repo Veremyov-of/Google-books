@@ -9,7 +9,7 @@ export default function Books() {
     return (
         <div className="books_wrapp">
             {books.books.map((book, index) => (
-                <Link className="link-book" to={`${book.volumeInfo?.title}`} key={index}>
+                <Link id={book.volumeInfo?.title} className="link-book" to={`${book.volumeInfo?.title}`} key={index}>
                     <img 
                         src={book.volumeInfo?.imageLinks !== undefined ?
                         book.volumeInfo.imageLinks.thumbnail : './img/noPicture.png'} 
