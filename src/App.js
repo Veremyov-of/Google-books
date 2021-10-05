@@ -3,6 +3,9 @@ import { useSelector } from 'react-redux';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+//npm
+import {VerticleButton as ScrollUpButton} from "react-scroll-up-button";
+
 //components
 import Search from './components/Search';
 import Books from './components/Books';
@@ -20,12 +23,11 @@ function App() {
   return(
     <Router basename="/Google-books">
       <div className="App">
-        
         <Switch>
           <Route exact path="/">
               <Search />
               <Books />
-              {books.loadMore ? <Loadmore /> : ''}
+              {books.books.length > 0 ? <Loadmore /> : ''}
               <Loading />
           </Route>
           {books.books.map((book, index) =>
@@ -34,10 +36,9 @@ function App() {
             </Route>
           )}
         </Switch>
-    
-
-      
-        
+        <ScrollUpButton
+          AnimationDuration={494}
+        />
       </div>
     </Router>
   );

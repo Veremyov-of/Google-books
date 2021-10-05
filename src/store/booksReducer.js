@@ -9,7 +9,6 @@ const initialState = {
     sorting: 'relevance',
     loading: false,
     number: 0,
-    loadMore: false,
     stepSearch: 0
 }
 
@@ -52,7 +51,7 @@ export const booksReducer = (state = initialState, action) => {
 
         case 'RENDER_BOOKS':
             if(state.categories === 'All') {
-                return {...state, books: [...state.books, ...state.result], loading: false, loadMore: true}
+                return {...state, books: [...state.books, ...state.result], loading: false}
             } else {
                 let newState = [];
                 for(let i = 0; i < state.result.length; i++) {
@@ -60,7 +59,7 @@ export const booksReducer = (state = initialState, action) => {
                         newState.push(state.result[i])
                     }
                 }
-                return {...state, books: [...state.books, ...newState], loading: false, loadMore: true}
+                return {...state, books: [...state.books, ...newState], loading: false}
             }
             
 
