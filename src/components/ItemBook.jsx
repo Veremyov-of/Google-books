@@ -6,9 +6,7 @@ export default function ItemBook(props) {
     const textSnippet = props.book.searchInfo?.textSnippet;
     return(
         <div className="section-itemBook">
-        
            <div className="itemBook">
-               <Link smooth className="itemBook-link" to={`/#${infoBook?.title}`}>back</Link>
                 <img className="itemBook-img" src={infoBook.imageLinks !== undefined ?
                         infoBook.imageLinks.thumbnail : './img/noPicture.png'}
                         alt="img"/>
@@ -20,6 +18,7 @@ export default function ItemBook(props) {
                 <div className="itemBook-wrapp">
                     <p className="itemBook-textSnippet">{textSnippet}</p>
                 </div>
+                <Link smooth className="itemBook-link" to={`/#${infoBook?.title}`}>back</Link>
            </div>
         </div>
     );
