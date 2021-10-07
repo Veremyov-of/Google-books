@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import "../css/Loadmore.css";
+import { loadmoreAction, renderBooksAction } from '../store/booksReducer';
+import { clearResultAction } from './../store/booksReducer';
 
 export default function Loadmore() {
     const dispatch = useDispatch();
@@ -12,9 +14,9 @@ export default function Loadmore() {
         await fetch(`https://www.googleapis.com/books/v1/volumes?q=${books.search}&key=${books.apiKey}&maxResults=${books.maxResults}&orderBy=${books.sorting}&startIndex=${books.books.length}`)
             .then(response => response.json())
             .then(json => result = json.items)
-            .then(() => dispatch({type: 'LOADMORE', payload: result}))
-            .then(() => dispatch({type: 'RENDER_BOOKS'}))
-            .then(() => dispatch({type: 'CLEAR_RESULT'}))
+            .then(() => dispatch(loadmoreAction(result)))
+            .then(() => dispatch(renderBooksAction()))
+            .then(() => dispatch(clearResultAction()))
     }
 
     const loadingBooks = () => {

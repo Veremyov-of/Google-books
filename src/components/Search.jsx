@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 //style
 import "../css/Search.css";
+import { handleChangeAction, renderBooksAction, sortingChangeAction } from '../store/booksReducer';
+import { handleSubmitAction, categoriesChangeAction, loadingAction } from './../store/booksReducer';
 
 export default function Search() {
     const dispatch = useDispatch();
@@ -9,7 +11,7 @@ export default function Search() {
 
     const handleChange = (event) => {
         const book = event.target.value;
-        dispatch({type: 'INPUT_CHANGE', payload: book});
+        dispatch(handleChangeAction(book));
       }
     
     async function handleSubmit(event) {
@@ -19,26 +21,26 @@ export default function Search() {
         await fetch(`https://www.googleapis.com/books/v1/volumes?q=${books.search}&key=${books.apiKey}&maxResults=${books.maxResults}&orderBy=${books.sorting}`)
             .then(response => response.json())
             .then(json => result = json)
-        dispatch({type: 'SEARCH', payload: result});
+        dispatch(handleSubmitAction(result));
         renderBooks();
     }
 
     const sortingChange = (event) => {
         const value = event.target.value;
-        dispatch({type: 'SORTING', payload: value});
+        dispatch(sortingChangeAction(value));
     }
 
     const categoriesChange = (event) => {
         const value = event.target.value;
-        dispatch({type: 'CATEGORIES_CHANGE', payload: value});
+        dispatch(categoriesChangeAction(value));
     }
 
     const renderBooks = () => {
-        dispatch({type: 'RENDER_BOOKS'});
+        dispatch(renderBooksAction());
     }
 
     const loadingBooks = () => {
-        dispatch({type: 'LOADING'})
+        dispatch(loadingAction())
     }
 
     return (

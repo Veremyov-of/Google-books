@@ -12,15 +12,24 @@ const initialState = {
     stepSearch: 0
 }
 
+const INPUT_CHANGE = 'INPUT_CHANGE';
+const SEARCH = 'SEARCH';
+const SORTING = 'SORTING';
+const CATEGORIES_CHANGE = 'CATEGORIES_CHANGE';
+const LOADING = 'LOADING';
+const LOADMORE = 'LOADMORE';
+const RENDER_BOOKS = 'RENDER_BOOKS';
+const CLEAR_RESULT = 'CLEAR_RESULT';
+
 export const booksReducer = (state = initialState, action) => {
     switch(action.type) {
-        case 'INPUT_CHANGE':
+        case INPUT_CHANGE:
             return {
                 ...state,
                 search: action.payload
             };
 
-        case 'SEARCH':
+        case SEARCH:
             if(state.search) {
                 return {
                     ...state,
@@ -34,26 +43,26 @@ export const booksReducer = (state = initialState, action) => {
             return {...state, result: []}
             
 
-        case 'SORTING':
+        case SORTING:
             return {
                 ...state,
                 sorting: action.payload
             };
 
-        case 'CATEGORIES_CHANGE':
+        case CATEGORIES_CHANGE:
             return {
                 ...state,
                 categories: action.payload
             };
 
-        case 'LOADING': 
+        case LOADING: 
                 return {...state, loading: true};
 
-        case 'LOADMORE': 
+        case LOADMORE: 
             return {...state, result: [...action.payload]}
         
 
-        case 'RENDER_BOOKS':
+        case RENDER_BOOKS:
             if(!state.search) {
                 return {...state, books: [], loading: false}
             }
@@ -71,11 +80,20 @@ export const booksReducer = (state = initialState, action) => {
             }
             
 
-        case 'CLEAR_RESULT':
+        case CLEAR_RESULT:
             return {...state, result: []}
           
             
         default:
             return state;
     }
-} 
+}
+
+export const handleChangeAction = (payload) => ({ type: INPUT_CHANGE, payload });
+export const handleSubmitAction = (payload) => ({ type: SEARCH, payload});
+export const sortingChangeAction = (payload) => ({ type: SORTING, payload});
+export const categoriesChangeAction = (payload) => ({ type: CATEGORIES_CHANGE, payload});
+export const renderBooksAction = () => ({ type: RENDER_BOOKS });
+export const loadingAction = () => ({ type: LOADING });
+export const loadmoreAction = (payload) => ({ type: LOADMORE, payload});
+export const clearResultAction = () => ({ type: CLEAR_RESULT});
