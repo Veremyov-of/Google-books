@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 //style
 import "../css/Search.css";
 
-import { handleChangeAction, renderBooksAction, sortingChangeAction } from '../store/booksReducer';
-import { handleSubmitAction, categoriesChangeAction, loadingAction } from './../store/booksReducer';
+import { handleChangeAction, sortingChangeAction } from '../store/booksReducer';
+import { categoriesChangeAction} from './../store/booksReducer';
 import { searchAction } from './../store/asyncActions/search';
 
 export default function Search() {
@@ -15,17 +15,6 @@ export default function Search() {
         const book = event.target.value;
         dispatch(handleChangeAction(book));
       }
-    
-    // async function handleSubmit(event) {
-    //     loadingBooks();
-    //     event.preventDefault();
-    //     let result = [];
-    //     await fetch(`https://www.googleapis.com/books/v1/volumes?q=${books.search}&key=${books.apiKey}&maxResults=${books.maxResults}&orderBy=${books.sorting}`)
-    //         .then(response => response.json())
-    //         .then(json => result = json)
-    //     dispatch(handleSubmitAction(result));
-    //     renderBooks();
-    // }
 
     const sortingChange = (event) => {
         const value = event.target.value;
@@ -37,21 +26,9 @@ export default function Search() {
         dispatch(categoriesChangeAction(value));
     }
 
-    // const renderBooks = () => {
-    //     dispatch(renderBooksAction());
-    // }
-
-    // const loadingBooks = () => {
-    //     dispatch(loadingAction())
-    // }
-
     return (
         <div className='search'>
             <h1 className="search-title">Search for books</h1>          
-            {/* <form className='search-form' onSubmit={handleSubmit}>
-                <input className='search-input' onChange={handleChange} type="text" value={books.search} placeholder="Search for Books"/>
-                <button className='search-btn' type="submit">Search</button>
-            </form> */}
 
             <form className='search-form' onSubmit={(event) => dispatch(searchAction(event,books))}>
                 <input className='search-input' onChange={handleChange} type="text" value={books.search} placeholder="Search for Books"/>

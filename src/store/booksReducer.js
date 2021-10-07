@@ -91,9 +91,9 @@ export const booksReducer = (state = initialState, action) => {
 
 export const handleChangeAction = (payload) => ({ type: INPUT_CHANGE, payload });
 export const handleSubmitAction = (payload) => ({ type: SEARCH, payload});
+export const handleClickloadmoreAction = (payload) => ({ type: LOADMORE, payload});
 export const sortingChangeAction = (payload) => ({ type: SORTING, payload});
 export const categoriesChangeAction = (payload) => ({ type: CATEGORIES_CHANGE, payload});
 export const renderBooksAction = () => ({ type: RENDER_BOOKS });
 export const loadingAction = () => ({ type: LOADING });
-export const loadmoreAction = (payload) => ({ type: LOADMORE, payload});
 export const clearResultAction = () => ({ type: CLEAR_RESULT});

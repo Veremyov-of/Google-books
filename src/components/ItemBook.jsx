@@ -9,7 +9,7 @@ export default function ItemBook(props) {
     return(
         <div className="section-itemBook">
            <div className="itemBook">
-                <img className="itemBook-img" src={infoBook.imageLinks !== undefined ?
+                <img className="itemBook-img" src={infoBook?.imageLinks !== undefined ?
                         infoBook.imageLinks.thumbnail : './img/noPicture.png'}
                         alt="img"/>
                 <div className="itemBook-info">
