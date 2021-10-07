@@ -1,4 +1,5 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 
 //API
 import logger from "redux-logger";
@@ -10,4 +11,4 @@ const rootReducer = combineReducers({
     books: booksReducer
 })
 
-export const store = createStore(rootReducer, applyMiddleware(logger));
+export const store = createStore(rootReducer, applyMiddleware(thunk,logger));
