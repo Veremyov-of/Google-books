@@ -1,5 +1,7 @@
-
 import { useSelector } from 'react-redux';
+
+//style
+import '../css/Loading.css'
 
 export default function Loading() {
     const loading = useSelector(state => state.books.loading)

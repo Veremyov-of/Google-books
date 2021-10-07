@@ -1,0 +1,20 @@
+.loadmore-wrapp {
+    text-align: center;
+    padding-bottom: 100px;
+  }
+  
+  .loadmore-btn {
+    cursor: pointer;
+    border: none;
+    width: 200px;
+    height: 50px;
+    background: #44aaee;
+    color: #fff;
+    font-size: 20px;
+    transition: background .3s;
+  }
+  
+  .loadmore-btn:hover {
+    transition: background .3s;
+    background: #5db7f3;
+  }

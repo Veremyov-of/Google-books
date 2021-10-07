@@ -1,7 +1,9 @@
 
 import { useSelector } from 'react-redux';
-
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+//style
+import "./css/App.css";
 
 //npm
 import {VerticleButton as ScrollUpButton} from "react-scroll-up-button";

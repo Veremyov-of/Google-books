@@ -1,4 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
+
+//style
+import "../css/Search.css";
+
 export default function Search() {
     const dispatch = useDispatch();
     const books = useSelector(state => state.books);

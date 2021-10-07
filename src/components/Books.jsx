@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux';
-
 import { Link } from 'react-router-dom';
+
+//style
+import '../css/Books.css'
 
 export default function Books() {
 

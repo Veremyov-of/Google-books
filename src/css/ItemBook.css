@@ -1,0 +1,41 @@
+.section-itemBook {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .itemBook {
+    box-shadow: 6px 6px #99a3ce75, 12px 12px #99a3ce75;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #99a3ce75; 
+    width: 600px;
+    min-height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .itemBook-img {
+    margin-right: 20px;
+    width: 160px;
+    height: 210px;
+  }
+  
+  .itemBook-info {
+    margin-bottom: 10px;
+    width: 310px;
+    color: #212121;
+  }
+  
+  .itemBook-title {
+    font-size: 35px;
+    letter-spacing: .02em;
+  }
+  
+  .itemBook-categories {
+    font-size: 18px;
+    font-weight: 500;
+  }

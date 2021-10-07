@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 
+import "../css/Loadmore.css";
+
 export default function Loadmore() {
     const dispatch = useDispatch();
     const books = useSelector(state => state.books);

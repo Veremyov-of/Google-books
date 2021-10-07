@@ -1,5 +1,7 @@
-
 import { HashLink as Link } from 'react-router-hash-link';
+
+//style
+import '../css/ItemBook.css'
 
 export default function ItemBook(props) {
     const infoBook = props.book.volumeInfo;
