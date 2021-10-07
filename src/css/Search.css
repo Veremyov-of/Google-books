@@ -86,3 +86,22 @@
     height: 28px;
     outline: none;
   }
+
+
+  @media (max-width: 420px) {
+    .search-input {
+      width: 200px;
+    }
+    .search-btn {
+      width: 80px;
+    }
+    .search-filter h3 {
+      font-size: 14px;
+    }
+    .search-filter {
+      width: 280px;
+    }
+    .search-select {
+      width: 60px;
+    }
+  }
