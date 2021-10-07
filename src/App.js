@@ -14,6 +14,7 @@ import Books from './components/Books';
 import Loadmore from './components/Loadmore';
 import Loading from './components/Loading';
 import ItemBook from './components/ItemBook';
+import Error from './components/Error';
 
 
 
@@ -38,6 +39,7 @@ function App() {
             </Route>
           )}
         </Switch>
+        {books.error ? <Error /> : ''}
         <ScrollUpButton
           AnimationDuration={494}
         />

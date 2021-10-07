@@ -9,7 +9,8 @@ const initialState = {
     sorting: 'relevance',
     loading: false,
     number: 0,
-    stepSearch: 0
+    stepSearch: 0,
+    error: false,
 }
 
 const INPUT_CHANGE = 'INPUT_CHANGE';
@@ -20,6 +21,7 @@ const LOADING = 'LOADING';
 const LOADMORE = 'LOADMORE';
 const RENDER_BOOKS = 'RENDER_BOOKS';
 const CLEAR_RESULT = 'CLEAR_RESULT';
+const ERROR = 'ERROR';
 
 export const booksReducer = (state = initialState, action) => {
     switch(action.type) {
@@ -82,6 +84,9 @@ export const booksReducer = (state = initialState, action) => {
 
         case CLEAR_RESULT:
             return {...state, result: []}
+
+        case ERROR:
+            return {...state, error: true, loading: false}
           
             
         default:
@@ -90,10 +95,12 @@ export const booksReducer = (state = initialState, action) => {
 }
 
 export const handleChangeAction = (payload) => ({ type: INPUT_CHANGE, payload });
-export const handleSubmitAction = (payload) => ({ type: SEARCH, payload});
-export const handleClickloadmoreAction = (payload) => ({ type: LOADMORE, payload});
-export const sortingChangeAction = (payload) => ({ type: SORTING, payload});
-export const categoriesChangeAction = (payload) => ({ type: CATEGORIES_CHANGE, payload});
+export const handleSubmitAction = (payload) => ({ type: SEARCH, payload });
+export const handleClickloadmoreAction = (payload) => ({ type: LOADMORE, payload });
+export const sortingChangeAction = (payload) => ({ type: SORTING, payload });
+export const categoriesChangeAction = (payload) => ({ type: CATEGORIES_CHANGE, payload });
 export const renderBooksAction = () => ({ type: RENDER_BOOKS });
 export const loadingAction = () => ({ type: LOADING });
 export const clearResultAction = () => ({ type: CLEAR_RESULT});
+
+export const errorAction = () => ({ type: ERROR });

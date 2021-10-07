@@ -1,0 +1,16 @@
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error_title {
+    font-size: 30px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(230, 98, 98, 0.897);
+    width: 300px;
+    height: 150px;
+}

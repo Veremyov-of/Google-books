@@ -1,4 +1,4 @@
-import { renderBooksAction, handleSubmitAction, loadingAction } from "../booksReducer";
+import { renderBooksAction, handleSubmitAction, loadingAction, errorAction } from "../booksReducer";
 export const searchAction = (event, books) => {
     event.preventDefault();
     return function(dispatch) {
@@ -7,5 +7,6 @@ export const searchAction = (event, books) => {
             .then(response => response.json())
             .then(json => dispatch(handleSubmitAction(json)))
             .then(() => dispatch(renderBooksAction()))
+            .catch(() => dispatch(errorAction()));
     }
 }
